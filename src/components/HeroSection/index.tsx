@@ -1,6 +1,11 @@
 import React from "react";
 import { Button } from "../Button";
-import { Container, HeroContent, HeroTitle, HeroDescription } from "./styles.ts";
+import {
+  Container,
+  HeroContent,
+  HeroTitle,
+  HeroDescription,
+} from "./styles.ts";
 
 export const HeroSection: React.FC = () => {
   return (

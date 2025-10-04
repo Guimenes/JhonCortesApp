@@ -1,5 +1,10 @@
 import React from "react";
-import { Container, SectionTitle, GalleryGrid, GalleryImage } from "./styles.ts";
+import {
+  Container,
+  SectionTitle,
+  GalleryGrid,
+  GalleryImage,
+} from "./styles.ts";
 
 const galleryImages = [
   {
