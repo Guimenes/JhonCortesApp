@@ -11,33 +11,56 @@ const baseButton: CSSProperties = {
   outline: "none",
 };
 
-export const primaryButton: CSSProperties = {
-  ...baseButton,
-  backgroundColor: "#007bff",
-  color: "#ffffff",
+const sizeStyles = {
+  small: { padding: "8px 16px", fontSize: "0.875rem" },
+  medium: { padding: "12px 24px", fontSize: "1rem" },
+  large: { padding: "16px 32px", fontSize: "1.125rem" },
 };
 
-export const secondaryButton: CSSProperties = {
-  ...baseButton,
-  backgroundColor: "#6c757d",
-  color: "#ffffff",
-};
+export const getButtonStyle = (
+  variant: "primary" | "secondary" | "success" | "danger" = "primary",
+  size: "small" | "medium" | "large" = "medium",
+  disabled: boolean = false
+): CSSProperties => {
+  let variantStyle: CSSProperties = {};
 
-export const successButton: CSSProperties = {
-  ...baseButton,
-  backgroundColor: "#28a745",
-  color: "#ffffff",
-};
+  if (disabled) {
+    variantStyle = {
+      backgroundColor: "#e9ecef",
+      color: "#6c757d",
+      cursor: "not-allowed",
+    };
+  } else {
+    switch (variant) {
+      case "secondary":
+        variantStyle = {
+          backgroundColor: "#6c757d",
+          color: "#ffffff",
+        };
+        break;
+      case "success":
+        variantStyle = {
+          backgroundColor: "#28a745",
+          color: "#ffffff",
+        };
+        break;
+      case "danger":
+        variantStyle = {
+          backgroundColor: "#dc3545",
+          color: "#ffffff",
+        };
+        break;
+      default:
+        variantStyle = {
+          backgroundColor: "#ecb613",
+          color: "#221d10",
+        };
+    }
+  }
 
-export const dangerButton: CSSProperties = {
-  ...baseButton,
-  backgroundColor: "#dc3545",
-  color: "#ffffff",
-};
-
-export const disabledButton: CSSProperties = {
-  ...baseButton,
-  backgroundColor: "#e9ecef",
-  color: "#6c757d",
-  cursor: "not-allowed",
+  return {
+    ...baseButton,
+    ...sizeStyles[size],
+    ...variantStyle,
+  };
 };

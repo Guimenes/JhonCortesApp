@@ -1,10 +1,4 @@
-import {
-  primaryButton,
-  secondaryButton,
-  successButton,
-  dangerButton,
-  disabledButton,
-} from "./styles.js";
+import { getButtonStyle } from "./styles.js";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -12,6 +6,7 @@ interface ButtonProps {
   variant?: "primary" | "secondary" | "success" | "danger";
   disabled?: boolean;
   type?: "button" | "submit" | "reset";
+  size?: "small" | "medium" | "large";
 }
 
 export const Button = ({
@@ -20,26 +15,12 @@ export const Button = ({
   variant = "primary",
   disabled = false,
   type = "button",
+  size = "medium",
 }: ButtonProps) => {
-  const getButtonStyle = () => {
-    if (disabled) return disabledButton;
-
-    switch (variant) {
-      case "secondary":
-        return secondaryButton;
-      case "success":
-        return successButton;
-      case "danger":
-        return dangerButton;
-      default:
-        return primaryButton;
-    }
-  };
-
   return (
     <button
       type={type}
-      style={getButtonStyle()}
+      style={getButtonStyle(variant, size, disabled)}
       onClick={disabled ? undefined : onClick}
       disabled={disabled}
     >
