@@ -53,7 +53,6 @@ export const Header = ({ title: titleText = "Jhon Cortes" }: HeaderProps) => {
           <NavLink href="#services">Serviços</NavLink>
           <NavLink href="#shop">Loja</NavLink>
           <NavLink href="#gallery">Galeria</NavLink>
-          <NavLink href="#booking">Agendamento</NavLink>
           <NavLink href="#contact">Contato</NavLink>
         </Navigation>
 
@@ -111,9 +110,6 @@ export const Header = ({ title: titleText = "Jhon Cortes" }: HeaderProps) => {
             </SideMenuLink>
             <SideMenuLink href="#gallery" onClick={closeMenu}>
               Galeria
-            </SideMenuLink>
-            <SideMenuLink href="#booking" onClick={closeMenu}>
-              Agendamento
             </SideMenuLink>
             <SideMenuLink href="#contact" onClick={closeMenu}>
               Contato

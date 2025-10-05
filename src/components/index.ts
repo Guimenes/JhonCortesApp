@@ -5,5 +5,4 @@ export { HeroSection } from "./HeroSection";
 export { ServicesSection } from "./ServicesSection";
 export { ShopSection } from "./ShopSection";
 export { GallerySection } from "./GallerySection";
-export { BookingSection } from "./BookingSection";
 export { Footer } from "./Footer";

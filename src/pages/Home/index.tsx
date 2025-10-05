@@ -4,7 +4,6 @@ import {
   ServicesSection,
   ShopSection,
   GallerySection,
-  BookingSection,
   Footer,
 } from "../../components/index.js";
 
@@ -17,7 +16,6 @@ export const Home = () => {
         <ServicesSection />
         <ShopSection />
         <GallerySection />
-        <BookingSection />
       </main>
       <Footer />
     </div>
